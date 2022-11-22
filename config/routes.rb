@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   delete "offers/:id", to: "offers#destroy"
   get "offers", to: "offers#create"
 
+  delete "product/:id", to: "product#destroy"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
