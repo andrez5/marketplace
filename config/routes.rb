@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   delete "product/:id", to: "product#destroy"
 
+  get "products/:id/edit", to: 'products#edit'
+  path "products/:id", to: "products#update"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

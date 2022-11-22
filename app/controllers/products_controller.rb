@@ -3,6 +3,19 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    if @product.update(product_params)
+      redirect_to @offer, notice: "product was successfully update."
+    else
+      render :edit, status: :unproccessable_entity
+    end
+  end
+
   def create
     @product = Product.new(product_params)
     @product.save
@@ -20,5 +33,6 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:title, :info, :photo, :price, :available, :user_id)
   end
+
 
 end
