@@ -1,2 +1,7 @@
 <h1>Offers</h1>
 <h2><%= @offer.quantity %></h2>
+
+<%= link_to "Delete",
+  offer_path(@offer),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
