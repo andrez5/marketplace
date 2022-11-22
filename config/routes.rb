@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "products/new", to: "products#new"
   get "products", to: "products#create"
 
+  delete "product/:id", to: "product#destroy"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

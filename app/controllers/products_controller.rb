@@ -1,12 +1,18 @@
 class ProductsController < ApplicationController
   def new
-    @products = Product.all
+    @product = Product.new
   end
 
   def create
     @product = Product.new(product_params)
     @product.save
     # redirect_to product_path(@product)
+  end
+  
+  def destroy
+    @product = product.find(params[:id])
+    @product.destroy
+    redirect_to products_path, status: :see_other
   end
 
   private
