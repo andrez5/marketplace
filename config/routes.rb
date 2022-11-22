@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get "offers/:id", to: "offers#show"
   get "offers/:id/edit", to: 'offers#edit'
   path "offers/:id", to: 'offers#update'
+  delete "offers/:id", to: "offers#destroy"
+  get "offers", to: "offers#create"
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
