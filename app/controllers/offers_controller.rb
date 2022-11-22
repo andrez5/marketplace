@@ -7,4 +7,12 @@ class OffersController < ApplicationController
   def edit
     @offer = Offer.find(params[:id])
   end
+
+  def show
+    @offer = Offer.find(params[:id])
+  end
+
+  def new
+    @offer = Offer.new
+  end
 end
