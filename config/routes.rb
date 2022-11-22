@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "offers", to: "offers#create"
   get "offers/:id", to: "offers#show"
   get "offers/:id/edit", to: 'offers#edit'
-  path "offers/:id", to: 'offers#update'
+  patch "offers/:id", to: 'offers#update'
   delete "offers/:id", to: "offers#destroy"
 
   get "products/new", to: "products#new"
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   delete "product/:id", to: "product#destroy"
 
   get "products/:id/edit", to: 'products#edit'
-  path "products/:id", to: "products#update"
+  patch "products/:id", to: "products#update"
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
