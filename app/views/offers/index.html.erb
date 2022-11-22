@@ -1,3 +1,5 @@
+<div class="container">
+
 <h1>Offers</h1>
 
 <div id="offers">
@@ -9,4 +11,5 @@
     <%= image_tag(foto, draggable: "true", id: "drag1") %>
   <%= link_to 'Delete', offer_path(offer), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
   <% end %>
+</div>
 </div>
