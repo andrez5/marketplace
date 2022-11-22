@@ -11,4 +11,10 @@ class OffersController < ApplicationController
   def new
     @offer = Offer.new
   end
+
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+    redirect_to offers_path, status: :see_other
+  end
 end
