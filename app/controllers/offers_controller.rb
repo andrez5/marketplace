@@ -8,6 +8,14 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
   end
 
+  def update
+    if @offer.update(offer_params)
+      redirect_to @offer, notice: "offer was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def show
     @offer = Offer.find(params[:id])
   end
@@ -15,4 +23,5 @@ class OffersController < ApplicationController
   def new
     @offer = Offer.new
   end
+
 end
