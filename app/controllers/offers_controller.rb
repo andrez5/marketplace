@@ -3,6 +3,10 @@ class OffersController < ApplicationController
     @offers = Offer.all
   end
 
+  def show
+    @offer = Offer.find(params[:id])
+  end
+
   def new
     @offer = Offer.new
   end
@@ -11,9 +15,9 @@ class OffersController < ApplicationController
     @product = Product.find(params[:product_id])
     @offer = Offer.new(offer_params)
     @offer.product = @product
-
+    @offer.user = User.first
     if @offer.save
-      redirect_to product_path(@product)
+      redirect_to product_offer_path(@product, @offer), notice: "deu boa"
     else
       render 'products/show', status: :unprocessable_entity
     end
@@ -34,7 +38,7 @@ class OffersController < ApplicationController
   def destroy
     @offer = Offer.find(params[:id])
     @offer.destroy
-    redirect_to offers_path, status: :see_other
+    redirect_to products_path, status: :see_other
   end
 
   private

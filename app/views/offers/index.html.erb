@@ -4,10 +4,12 @@
 
 <div id="offers">
   <% @offers.each do |offer| %>
-    <%= offer.quantity %>
-    <p>
-      <%= link_to "Show this offer", offer %>
-    </p>
+    <%= offer.user.first_name%>
+    <%= offer.product.title%>
+     <%= offer.product.price%>
+      <%foto = offer.product.photo%>
+    <%= image_tag(foto, draggable: "true", id: "drag1") %>
+  <%= link_to 'Delete', offer_path(offer), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
   <% end %>
 </div>
 </div>
