@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :products do
-    resources :offers
+    resources :offers, except: :destroy
   end
+
+  resources :offers, only: :destroy
 
 
 
