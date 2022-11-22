@@ -1,0 +1,9 @@
+<h1>aaaaaaaaaaa</h1>
+<div id="products">
+  <% @products.each do |product| %>
+    <%= product.title %>
+    <p>
+      <%= link_to "Show this product", product %>
+    </p>
+  <% end %>
+</div>
