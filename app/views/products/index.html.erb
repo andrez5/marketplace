@@ -1,19 +1,12 @@
 <h1>Nossos produtos:</h1>
 <div id="products">
   <% @products.each do |product| %>
-<<<<<<< HEAD
     <h3>Produto: <%= product.title %></h3>
     <h4>R$<%= product.price %></h4>
     <%foto = product.photo%>
-    <%= image_tag(foto, draggable: "true", id: "drag1") %>
-=======
-    <%= product.title %>
-    <%= product.price %>
     <%= cl_image_tag product.photo.key%>
-
     <p>
       <%= link_to "Show this product", product, class: 'btn btn-dark' %>
-
     </p>
   <% end %>
   <%= link_to "Create Product", new_product_path, class: 'btn btn-danger' %>
