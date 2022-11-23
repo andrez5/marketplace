@@ -1,21 +1,21 @@
-<h1>Nossos produtos:</h1>
-<div id="products">
-  <% @products.each do |product| %>
-    <h3>Produto: <%= product.title %></h3>
-    <h4>R$<%= product.price %></h4>
-    <%foto = product.photo%>
-    <%= cl_image_tag product.photo.key%>
-    <p>
-      <%= link_to "Show this product", product, class: 'btn btn-dark' %>
-    </p>
-  <% end %>
-  <%= link_to "Create Product", new_product_path, class: 'btn btn-danger' %>
-</div>
+<h1 class="text-center">Produtos</h1>
 
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+<div class="container">
+  <div class="card-products">
+  <% @products.each do |product| %>
+    <div class="card-product">
+      <%= cl_image_tag product.photo.key%>
+      <div class="card-product-infos">
+        <h2><%= product.title %></h2>
+        <p>R$<%= product.price %></p>
+        <p>
+          <%= link_to "Show this product", product, class: 'btn btn-dark' %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <div class="card-create-btn">
+    <%= link_to "Create Product", new_product_path, class: 'btn btn-primary' %>
   </div>
 </div>
