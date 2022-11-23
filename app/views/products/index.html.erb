@@ -1,15 +1,22 @@
-<h1>aaaaaaaaaaa</h1>
+<h1>Nossos produtos:</h1>
 <div id="products">
-          fazer um card
   <% @products.each do |product| %>
-    <%= product.title %>
-    <%= product.price %>
+    <h3>Produto: <%= product.title %></h3>
+    <h4>R$<%= product.price %></h4>
     <%foto = product.photo%>
-    <%#= image_tag(foto, draggable: "true", id: "drag1") %>
+    <%= image_tag(foto, draggable: "true", id: "drag1") %>
     <p>
       <%= link_to "Show this product", product, class: 'btn btn-dark' %>
 
     </p>
   <% end %>
   <%= link_to "Create Product", new_product_path, class: 'btn btn-danger' %>
+</div>
+
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
 </div>
