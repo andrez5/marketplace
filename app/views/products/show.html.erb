@@ -1,9 +1,18 @@
-<h1><%= @product.title.capitalize %></h1>
-<h2>Descrição do produto: <%= @product.info %></h2>
-    <%foto = @product.photo%>
-    <%= image_tag(foto, draggable: "true", id: "drag1") %>
-<h2>R$: <%= @product.price %></h2>
-<h2>Quantidade: <%= @product.available %></h2>
-<h2>Este produto é comercilizado por: <%= @product.user.first_name.capitalize%>
-<%= @product.user.last_name.capitalize %></h2>
-<%= link_to 'Comprar', new_product_offer_path(@product), class: 'btn btn-success' %>
+<div class="containier">
+  <h1><%= @product.title.capitalize %></h1>
+  <<div class="row">
+    <div class="col-sm-6">
+      <%foto = @product.photo%>
+      <%=image_tag(foto, draggable: "true", id: "drag1", class: "imagem-produtos")%>
+    </div>
+    <div class="col-sm-6">
+      <h2>Descrição do produto: <%= @product.info %></h2>
+      <h2>R$: <%= @product.price %></h2>
+      <h2>Quantidade: <%= @product.available %></h2>
+    </div>
+  </div>
+  </div>
+  <h2>Este produto é comercilizado por: <%= @product.user.first_name.capitalize%>
+  <%= @product.user.last_name.capitalize %></h2>
+  <%= link_to 'Comprar', new_product_offer_path(@product), class: 'btn btn-success' %>
+</div>
