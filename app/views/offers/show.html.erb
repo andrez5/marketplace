@@ -1,7 +1,7 @@
 <h1><%= @offer.product.title %></h1>
  <p>Descrição do produto: <%= @offer.product.info %></p>
-        <%foto = @offer.product.photo%>
-    <%#= image_tag(foto, draggable: "true", id: "drag1") %>
+    
+    <%= cl_image_tag @offer.product.photo.key%>
    <p><%= @offer.product.price%></p>
 <p>Quantidade comprada: <%= @offer.quantity %></p>
  <p>Muito obrigado por sua compra: <%= @offer.user.first_name.capitalize%></p>
