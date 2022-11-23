@@ -3,7 +3,7 @@
  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :title %>
   <%= f.input :info %>
-  <%= f.input :photo %>
+  <%= f.input :photo, as: :file %>
   <%# <%= f.input :species, collection: Pet::SPECIES %>
   <%= f.input :price %>
   <%= f.input :available %>

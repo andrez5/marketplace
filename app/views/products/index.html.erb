@@ -4,8 +4,7 @@
   <% @products.each do |product| %>
     <%= product.title %>
     <%= product.price %>
-    <%foto = product.photo%>
-    <%#= image_tag(foto, draggable: "true", id: "drag1") %>
+    <%= cl_image_tag product.photo.key%>
     <p>
       <%= link_to "Show this product", product, class: 'btn btn-dark' %>
 
