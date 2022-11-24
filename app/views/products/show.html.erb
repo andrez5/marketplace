@@ -7,8 +7,22 @@
       <h1><%= @product.title.capitalize %></h1>
       <h2>Descrição do produto: <%= @product.info %></h2>
       <h2>R$: <%= @product.price %></h2>
-      <h2>Quantidade: <%= @product.available %></h2>
+
+
+      <%if @product.available > 0 %>
+      <h2>Quantidade: <%=@product.available %></h2>
       <%= link_to 'Comprar', new_product_offer_path(@product), class: 'btn btn-success' %>
+      <%else%>
+      <h2 class="estoque">Fora de estoque</h2>
+      <%end %>
+
+
+
+
+
+
+
+
     </div>
   </div>
   </div>

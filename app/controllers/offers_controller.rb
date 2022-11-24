@@ -17,11 +17,15 @@ class OffersController < ApplicationController
     @offer.product = @product
     @offer.user = User.first
     if @offer.save
+      @product.available -= @offer.quantity
+      @product.save
       redirect_to product_offer_path(@product, @offer), notice: "deu boa"
     else
       render 'products/show', status: :unprocessable_entity
     end
   end
+
+
 
   def edit
     @offer = Offer.find(params[:id])
