@@ -9,9 +9,9 @@
       <%= cl_image_tag product.photo.key%>
       <div class="card-product-infos">
         <h2><%= product.title %></h2>
-        <p>R$<%= product.price %></p>
+        <p>R$<%= number_to_currency(product.price) %></p>
         <p>
-          <%= link_to "mais info", product, class: 'btn btn-dark' %>
+          <%= link_to "Read More", product, class: 'btn btn-dark' %>
         </p>
       </div>
     </div>
