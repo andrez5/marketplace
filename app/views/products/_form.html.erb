@@ -1,3 +1,6 @@
+
+  <div class="login-box">
+  <h1>New Product</h1>
 <%= simple_form_for(@product) do |f| %>
  <%= f.error_notification %>
  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -7,8 +10,12 @@
   <%# <%= f.input :species, collection: Pet::SPECIES %>
   <%= f.input :price %>
   <%= f.input :available %>
-  <%= f.submit class: 'btn btn-dark'%>
+  <div class="mt-3 d-flex justify-content-center">
+  <%= f.submit class:"bn60 mb-4"%>
+  </div>
 <% end %>
+<%= link_to "Back to products", products_path %>
+</div>
 
 <%# <%= simple_form_for(@garden) do |f| %>
   <%# <%= f.error_notification %>
