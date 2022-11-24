@@ -1,5 +1,5 @@
 
-<h1 class="text-center">Produtos</h1>
+<h1 class="text-center">Products</h1>
 
 
 <div class="container">
@@ -9,9 +9,9 @@
       <%= cl_image_tag product.photo.key%>
       <div class="card-product-infos">
         <h2><%= product.title %></h2>
-        <p>R$<%= product.price %></p>
+        <p>R$<%= number_to_currency(product.price) %></p>
         <p>
-          <%= link_to "Show this product", product, class: 'btn btn-dark' %>
+          <%= link_to "Read More", product, class: 'btn btn-dark' %>
         </p>
       </div>
     </div>
