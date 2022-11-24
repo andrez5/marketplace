@@ -12,13 +12,13 @@
   <div class="carousel-inner">
     <h4>Our most recently added products</h4><br>
     <div class="carousel-item active">
-      <%= image_tag "category-chairs.jpg", alt: "imagem escritório",class: "d-block w-10"%>
+      <p><a href="<%= products_path(@product) %>" ><%= image_tag "category-chairs.jpg", alt: "imagem escritório",class: "d-block w-10"%></a></p>
     </div>
     <div class="carousel-item">
-      <%= image_tag "category-lounge-seating.jpg", alt: "imagem escritório",class: "d-block w-10"%>
+      <p><a href="<%= products_path(@product) %>" ><%= image_tag "category-lounge-seating.jpg", alt: "imagem escritório",class: "d-block w-10"%></a></p>
     </div>
     <div class="carousel-item">
-      <%= image_tag "category-work-from-home2.jpg", alt: "imagem escritório",class: "d-block w-10"%>
+      <p><a href="<%= products_path(@product) %>" ><%= image_tag "category-work-from-home2.jpg", alt: "imagem escritório",class: "d-block w-10"%></a></p>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
