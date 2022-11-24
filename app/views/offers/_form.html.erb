@@ -1,12 +1,15 @@
+<div class="login-box2">
+<h1>New Offer</h1>
 <%= simple_form_for @offer, url:product_offers_path do |f| %>
  <%= f.error_notification %>
  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
- <div class="form-inputs">
+ <div class="form-inputs2 text-center">
    <%= f.input :quantity, input_html: {min:'0', max:@product.available} %>
  </div>
 
-  <div class="form-actions btn btn-danger">
+  <div class="form-actions btn btn-info rounded">
    <%= f.button :submit %>
  </div>
 <% end %>
+</div>
