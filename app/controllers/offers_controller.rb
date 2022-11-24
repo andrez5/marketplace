@@ -8,6 +8,7 @@ class OffersController < ApplicationController
   end
 
   def new
+    @product = Product.find(params[:product_id])
     @offer = Offer.new
   end
 
@@ -17,6 +18,8 @@ class OffersController < ApplicationController
     @offer.product = @product
     @offer.user = current_user
     if @offer.save
+      @product.available -= @offer.quantity
+      @product.save
       redirect_to product_offer_path(@product, @offer), notice: "deu boa"
     else
       render 'products/show', status: :unprocessable_entity
