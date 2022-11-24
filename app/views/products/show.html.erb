@@ -15,7 +15,7 @@
       <%else%>
       <h2 class="estoque">Fora de estoque</h2>
       <%end %>
-
+      <%= link_to 'Deletar', product_path(@product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
 
 
 

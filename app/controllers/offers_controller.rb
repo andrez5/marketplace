@@ -8,6 +8,7 @@ class OffersController < ApplicationController
   end
 
   def new
+    @product = Product.find(params[:product_id])
     @offer = Offer.new
   end
 
@@ -24,8 +25,6 @@ class OffersController < ApplicationController
       render 'products/show', status: :unprocessable_entity
     end
   end
-
-
 
   def edit
     @offer = Offer.find(params[:id])
