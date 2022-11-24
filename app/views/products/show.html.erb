@@ -1,17 +1,25 @@
-<div class="containier">
-  <div class="row">
+<div class="container">
+  <div class="row mt-5">
     <div class="col-sm-8">
       <%= cl_image_tag @product.photo.key, class: "imagem-produtos"%>
     </div>
     <div class="col-sm-4 justify-content-center">
       <h1><%= @product.title.capitalize %></h1>
+
       <h2>Descrição do produto: <%= @product.info %></h2>
       <h2>R$: <%= @product.price %></h2>
-      <h2>Quantidade: <%= @product.available %></h2>
+
+
+      <%if @product.available > 0 %>
+      <h2>Quantidade: <%=@product.available %></h2>
       <%= link_to 'Comprar', new_product_offer_path(@product), class: 'btn btn-success' %>
+      <%else%>
+      <h2 class="estoque">Fora de estoque</h2>
+      <%end %>
+      <%= link_to 'Deletar', product_path(@product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+
     </div>
   </div>
-  </div>
-      <h2>Este produto é comercilizado por: <%= @product.user.first_name.capitalize%>
-      <%= @product.user.last_name.capitalize %></h2>
+      <p>Este produto é comercializado por: <%= @product.user.first_name.capitalize%>
+      <%= @product.user.last_name.capitalize %></p>
 </div>
