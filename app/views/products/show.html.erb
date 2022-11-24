@@ -3,23 +3,22 @@
     <div class="col-sm-8">
       <%= cl_image_tag @product.photo.key, class: "imagem-produtos"%>
     </div>
-    <div class="col-sm-4 justify-content-center">
-      <h1><%= @product.title.capitalize %></h1>
 
-      <h2>Descrição do produto: <%= @product.info %></h2>
+    <div class="product-info col-sm-4  border border-dark rounded " >
+        <h1><%= @product.title.capitalize %></h1>
+        <p>Descrição do produto: <%= @product.info %></p>
       <h2>R$: <%= @product.price %></h2>
-
-
       <%if @product.available > 0 %>
-      <h2>Quantidade: <%=@product.available %></h2>
-      <%= link_to 'Comprar', new_product_offer_path(@product), class: 'btn btn-success' %>
+      <p>Quantidade: <%=@product.available %></p>
+        <p>Este produto é comercializado por: <%= @product.user.first_name.capitalize%>
+        <%= @product.user.last_name.capitalize %></p>
+      <%= link_to 'Comprar', new_product_offer_path(@product), class: 'btn btn-dark' %>
       <%else%>
       <h2 class="estoque">Fora de estoque</h2>
       <%end %>
-      <%= link_to 'Deletar', product_path(@product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
-
+      <%= link_to 'Deletar', product_path(@product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-warning"' %>
     </div>
-  </div>
-      <p>Este produto é comercializado por: <%= @product.user.first_name.capitalize%>
-      <%= @product.user.last_name.capitalize %></p>
+  </div >
+
+
 </div>

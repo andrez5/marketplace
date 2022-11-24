@@ -44,3 +44,9 @@
   margin: 12px;
   text-align: center;
 }
+
+.product-info {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

@@ -1,9 +1,9 @@
 
 <div class="card-trip">
 <%= cl_image_tag @offer.product.photo.key%>
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @offer.product.title %></h2>
+  <div class="card-trip-infos width=300px ">
+    <div class="height=100%">
+      <h2><%=@offer.product.title%></h2>
       <p>Descrição do produto: <%= @offer.product.info %></p>
     </div>
     <h2 class="card-trip-pricing">R$: <%= @offer.product.price%></h2>
