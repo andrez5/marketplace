@@ -16,7 +16,7 @@ class OffersController < ApplicationController
     @product = Product.find(params[:product_id])
     @offer = Offer.new(offer_params)
     @offer.product = @product
-    @offer.user = User.first
+    @offer.user = current_user
     if @offer.save
       @product.available -= @offer.quantity
       @product.save

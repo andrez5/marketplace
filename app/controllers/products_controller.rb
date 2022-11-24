@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.user = User.first
+    @product.user = current_user
     if @product.save
       redirect_to @product, notice: "product was successfully created."
     else
