@@ -1,9 +1,15 @@
-<div class="text-center"><h1><strong>HOME<strong></h1></div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dpfdhkcil/image/upload/v1669298113/office-banner_y7mpsn.png);">
+  <div class="container">
+    <h1>Office Place helps you <strong>buy</strong> and <strong>sell</strong></h1>
+    <p>all your used office supplies!</p>
+    <a class="btn btn-flat" href="<%= new_product_path(@product) %>">Sell now!</a>
+    <a class="btn btn-flat" href="<%= products_path(@product) %>">Buy now!</a>
+  </div>
+</div>
 <div class="container d-flex justify-content-center">
 
 
-
-<div id="carouselExampleControls" class="carousel slide d-flex justify-content-center" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide d-flex justify-content-center mt-5 mb-5 " data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <%= image_tag "category-chairs.jpg", alt: "imagem escritório",class: "d-block w-10"%>
