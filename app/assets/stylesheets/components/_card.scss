@@ -50,3 +50,29 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
+.card-body {
+  margin-left: 45px;
+}
+
+.card-body-2 {
+  margin-left: 90px;
+  margin-top: 9px;
+}
+
+.card-image {
+  padding: 20px;
+  margin: 45px 0 0 45px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
