@@ -1,7 +1,7 @@
 <div class="page-container">
   <div class="row mt-5">
-    <div class="col-sm-8">
-      <%= cl_image_tag @product.photo.key, class: "imagem-produtos"%>
+    <div class="col-sm-8 ">
+      <%= cl_image_tag @product.photo.key, class: "imagem-produtos border border-dark"%>
     </div>
 
     <div class="product-info col-sm-4  border border-dark rounded-2 " >
@@ -15,7 +15,7 @@
       <%else%>
       <h2 class="estoque">Unavailable</h2>
       <%end %>
-      <%= link_to 'delete', product_path(@product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-dark' %>
+      <%= link_to 'delete', product_path(@product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-dark mb-5' %>
     </div>
   </div >
 
