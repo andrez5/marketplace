@@ -11,15 +11,15 @@
 <div id="carouselExampleControls" class="carousel slide d-flex justify-content-center mt-5" data-bs-ride="carousel">
   <div class="carousel-inner">
     <h4>Our most recently added products</h4><br>
-    <div class="carousel-item active">
-      <p><a href="<%= products_path(@product) %>" ><%= image_tag "category-chairs.jpg", alt: "imagem escritório",class: "d-block w-10"%></a></p>
-    </div>
-    <div class="carousel-item">
-      <p><a href="<%= products_path(@product) %>" ><%= image_tag "category-lounge-seating.jpg", alt: "imagem escritório",class: "d-block w-10"%></a></p>
-    </div>
-    <div class="carousel-item">
-      <p><a href="<%= products_path(@product) %>" ><%= image_tag "category-work-from-home2.jpg", alt: "imagem escritório",class: "d-block w-10"%></a></p>
-    </div>
+      <div class="card-product-home">
+    <% @products.reverse.first(3).each_with_index do |product, index| %>
+       <%# <%= cl_image_tag product.photo.key%>
+      <div class="carousel-item <%="active"if index.zero? %>">
+        <p><a href="<%= products_path(@product) %>" ><%= cl_image_tag product.photo.key,crop: :fill, alt: "imagem escritório",class: "d-block w-100 img-fluid"%></a></p>
+      </div>
+    <% end %>
+       </div>
+
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

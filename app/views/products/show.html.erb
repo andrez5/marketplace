@@ -13,11 +13,11 @@
           <%if @product.available > 0 %>
             <p>Quantity: <%=@product.available %></p>
             <p> <%= @product.user.first_name.capitalize%> <%= @product.user.last_name.capitalize %> is the seller of this product.</p>
-            <%= link_to 'Comprar', new_product_offer_path(@product), class: 'btn btn-flat' %>
+            <%= link_to 'Buy', new_product_offer_path(@product), class: 'btn btn-lg btn-flat' %>
           <%else%>
             <h2 class="estoque">Unavailable</h2>
           <%end %>
-          <%= link_to 'delete', product_path(@product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-dark' %>
+          <%= link_to 'Delete', product_path(@product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-lg btn-dark' %>
         </div>
       </div>
     </div>
