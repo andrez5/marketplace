@@ -1,23 +1,26 @@
-<div class="page-container">
-  <div class="row mt-5">
-    <div class="col-sm-8 ">
-      <%= cl_image_tag @product.photo.key, class: "imagem-produtos border border-dark"%>
-    </div>
 
-    <div class="product-info col-sm-4  border border-dark rounded-2 " >
-        <h1><%= @product.title.capitalize %></h1>
-        <p>Product description: <%= @product.info %></p>
-      <h2><%=number_to_currency(@product.price)  %></h2>
-      <%if @product.available > 0 %>
-      <p>Quantity: <%=@product.available %></p>
-      <p> <%= @product.user.first_name.capitalize%> <%= @product.user.last_name.capitalize %> is the seller of this product.</p>
-      <%= link_to 'Comprar', new_product_offer_path(@product), class: 'btn btn-flat' %>
-      <%else%>
-      <h2 class="estoque">Unavailable</h2>
-      <%end %>
-      <%= link_to 'delete', product_path(@product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-dark mb-5' %>
+<div class="card-container">
+  <div class="card mb-3" style="width: 800px;">
+    <div class="card-info">
+        <div class="col-md-6">
+          <%= cl_image_tag(@product.photo.key, :size => "455X400") %>
+        </div>
+      <div class="col-md-6">
+        <div class="card-body-2">
+          <h3 class="card-title"><%=@product.title%></h3>
+          <p class="card-text"><%= @product.info %></p>
+          <h2 class="card-trip-pricing"><%= number_to_currency(@product.price)%></h2>
+          <%if @product.available > 0 %>
+            <p>Quantity: <%=@product.available %></p>
+            <p> <%= @product.user.first_name.capitalize%> <%= @product.user.last_name.capitalize %> is the seller of this product.</p>
+            <%= link_to 'Comprar', new_product_offer_path(@product), class: 'btn btn-flat' %>
+          <%else%>
+            <h2 class="estoque">Unavailable</h2>
+          <%end %>
+          <%= link_to 'delete', product_path(@product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-dark' %>
+        </div>
+      </div>
     </div>
-  </div >
-
+  </div>
 
 </div>

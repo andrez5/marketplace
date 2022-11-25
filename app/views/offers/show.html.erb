@@ -1,13 +1,18 @@
-
-<div class="card-trip">
-<%= cl_image_tag @offer.product.photo.key%>
-  <div class="card-trip-infos width=300px ">
-    <div class="height=100%">
-      <h2><%=@offer.product.title%></h2>
-      <p>Descrição do produto: <%= @offer.product.info %></p>
+<div class="card-container">
+  <div class="card mb-3" style="width: 800px;">
+    <div class="card-info">
+        <div class="col-md-6">
+          <%= cl_image_tag(@offer.product.photo.key, :size => "400X400") %>
+        </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h3 class="card-title"><%=@offer.product.title%></h3>
+          <p class="card-text"><%= @offer.product.info %></p>
+          <h2 class="card-trip-pricing"><%= number_to_currency(@offer.product.price)%></h2>
+          <p>Quantity of items purchased: <%= @offer.quantity %></p>
+          <p class="card-text"><small class="text-muted"><%= @offer.user.first_name.capitalize%>, thank you for your purchase!</small></p>
+        </div>
+      </div>
     </div>
-    <h2 class="card-trip-pricing">R$: <%= @offer.product.price%></h2>
-    <p>Quantidade comprada: <%= @offer.quantity %></p>
-    <p>Muito obrigado por sua compra: <%= @offer.user.first_name.capitalize%></p>
   </div>
 </div>
